@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class ConvertMtoInches4 {
+public class Convert_MtoInches__Task4 {
     public static void main(String[] args) {
         double meters1 = 10;
         double inches1 = meters1 * 39.37;

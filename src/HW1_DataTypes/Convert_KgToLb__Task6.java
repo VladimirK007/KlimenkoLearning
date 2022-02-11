@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class ConvertKGtoLB6 {
+public class Convert_KgToLb__Task6 {
     public static void main(String[] args) {
         double kg1 = 10;
         double lb1 = kg1 * 2.2046;

@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class ConvertFtoC1 {
+public class Convert_FtoC__Task1 {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class ConvertMitoKm5 {
+public class Convert_MitoKm__Task5 {
     public static void main(String[] args) {
         double mile1 = 100;
         double km1 = mile1 * 1.609;

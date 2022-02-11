@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class FindPercentage8 {
+public class FindPercentage__Task8 {
     public static void main(String[] args) {
         double total_test = 10;
         double marked_test = 8;

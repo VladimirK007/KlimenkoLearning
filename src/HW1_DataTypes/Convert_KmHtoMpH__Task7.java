@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class ConvertKmHtoMpH7 {
+public class Convert_KmHtoMpH__Task7 {
     public static void main(String[] args) {
         double kmh1 = 240;
         double mih1 = kmh1 / 1.609;

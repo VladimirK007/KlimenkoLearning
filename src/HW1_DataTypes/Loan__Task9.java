@@ -1,6 +1,6 @@
 package HW1_DataTypes;
 
-public class Loan9 {
+public class Loan__Task9 {
     public static void main(String[] args) {
 
 
