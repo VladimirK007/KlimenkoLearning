@@ -1,11 +1,19 @@
 package HW1_DataTypes;
 
 public class Purchase__Task11 {
+
+    public boolean purchase(boolean mag1, boolean mag2) {
+        return mag1 || mag2;
+
+    }
+}
+
+class Parameters3 {
     public static void main(String[] args) {
-        boolean variety1 = false;
-        boolean variety2 = true;
-        boolean availability = variety1 || variety2;
-        System.out.println(availability);
+
+        Purchase__Task11 p = new Purchase__Task11();
+        boolean result = p.purchase(true, false);
+        System.out.println(result);
 
 
     }
