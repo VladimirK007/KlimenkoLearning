@@ -14,7 +14,7 @@ class Parameters2 {
 
 
         Loan__Task10 l = new Loan__Task10();
-        boolean result = l.loan(49999);
+        boolean result = l.loan(50001);
         System.out.println(result);
 
     }

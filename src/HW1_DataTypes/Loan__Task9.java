@@ -11,7 +11,7 @@ public class Loan__Task9 {
 class Parameters{
     public static void main(String[] args){
         Loan__Task9 l=new Loan__Task9();
-        boolean result = l.loan(36,36);
+        boolean result = l.loan(34,34);
         System.out.println(result);
 
     }
