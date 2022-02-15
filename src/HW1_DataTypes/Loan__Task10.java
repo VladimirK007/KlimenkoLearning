@@ -1,14 +1,21 @@
 package HW1_DataTypes;
 
 public class Loan__Task10 {
-    public static void main(String[] args) {
-        int income = 49999;
-        int a = 20000;
-        int b = 50000;
-        boolean loan = (income > a) && (income < b);
-        System.out.println(loan);
 
+    public boolean loan(int income) {
+        return (income > 20000) && (income < 50000);
 
     }
 
+}
+
+class Parameters2 {
+    public static void main(String[] args) {
+
+
+        Loan__Task10 l = new Loan__Task10();
+        boolean result = l.loan(49999);
+        System.out.println(result);
+
+    }
 }
