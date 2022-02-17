@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Fingers {
 
     public static int finger(int fingerNumber) {
-fingerNumber =2;
+
         switch (fingerNumber) {
             case 1 -> System.out.println("Это большой палец");
             case 2 -> System.out.println("Это указательный палец");
