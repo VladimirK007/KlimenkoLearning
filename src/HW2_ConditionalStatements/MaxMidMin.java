@@ -47,11 +47,11 @@ public class MaxMidMin {
         MaxMidMin result = new MaxMidMin();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value for a: ");
+        System.out.print("Enter the value for a: ");
         int a = scanner.nextInt();
-        System.out.println("Enter the value for b: ");
+        System.out.print("Enter the value for b: ");
         int b = scanner.nextInt();
-        System.out.println("Enter the value for c: ");
+        System.out.print("Enter the value for c: ");
         int c = scanner.nextInt();
 
         int output = result.maximin(a, b, c);
