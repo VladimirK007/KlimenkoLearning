@@ -45,6 +45,9 @@ public class MaxMidMin {
         if ((c > a) && (c > b)) {
             System.out.println("The value c = " + c + " is max");
         }
+        else {
+            System.out.println("You entered invalid data. Please try again!");
+        }
 
     }
 
