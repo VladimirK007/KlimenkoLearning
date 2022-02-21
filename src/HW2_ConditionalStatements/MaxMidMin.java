@@ -4,17 +4,8 @@ import java.util.Scanner;
 
 public class MaxMidMin {
 
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+    public int maximin(int a, int b, int c) {
 
-        System.out.print("Enter tha value for a: ");
-        int a = s.nextInt();
-
-        System.out.print("Enter tha value for b: ");
-        int b = s.nextInt();
-
-        System.out.print("Enter tha value for c: ");
-        int c = s.nextInt();
 
         if ((a < b) && (a < c)) {
             System.out.println("The value a = " + a + " is min");
@@ -45,10 +36,25 @@ public class MaxMidMin {
         if ((c > a) && (c > b)) {
             System.out.println("The value c = " + c + " is max");
         }
-        else {
-            System.out.println("You entered invalid data. Please try again!");
+        if ((a == b) && (a == c)) {
+            System.out.println("The entered values are equal");
         }
-
+        return a;
     }
 
+    public static void main(String[] args) {
+
+        MaxMidMin result = new MaxMidMin();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the value for a: ");
+        int a = scanner.nextInt();
+        System.out.println("Enter the value for b: ");
+        int b = scanner.nextInt();
+        System.out.println("Enter the value for c: ");
+        int c = scanner.nextInt();
+
+        int output = result.maximin(a, b, c);
+
+    }
 }
