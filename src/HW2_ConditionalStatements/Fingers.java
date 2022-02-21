@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Fingers {
 
-    public static int finger(int fingerNumber) {
+      static int finger(int fingerNumber) {
 
         switch (fingerNumber) {
             case 1 -> System.out.println("Это большой палец");
@@ -16,9 +16,7 @@ public class Fingers {
         }
         return fingerNumber;
     }
-}
 
-class Res {
     public static void main(String[] args) {
 
         Fingers result = new Fingers();
@@ -27,8 +25,8 @@ class Res {
 
         int input = scanner.nextInt();
         int output = result.finger(input);
-        System.out.println(output);
 
     }
 }
+
 
