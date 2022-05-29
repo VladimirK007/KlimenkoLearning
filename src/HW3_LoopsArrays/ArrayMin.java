@@ -16,7 +16,7 @@ public class ArrayMin {
     }
 
     public static void main(String[] args) {
-        int[] array1 = {-3, 12, 6, 90, 12};
+        int[] array1 = {113, 12, 6, 90, 12};
         mins(array1);
     }
 }
