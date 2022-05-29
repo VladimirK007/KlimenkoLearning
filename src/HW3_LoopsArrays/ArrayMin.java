@@ -2,19 +2,21 @@ package HW3_LoopsArrays;
 
 public class ArrayMin {
 
-    public static void main(String[] args) {
-        int[] myArray = {100, 23, 32};
+    public static void mins(int[] array) {
 
-        if ((myArray[0] < myArray[1]) && (myArray[0] < myArray[2])) {
-            System.out.println(myArray[0] + " is the minimum value");
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+
+            if (array[i] < min) {
+                min = array[i];
+            }
         }
-        if ((myArray[1] < myArray[0]) && (myArray[1] < myArray[2])) {
-            System.out.println(myArray[1] + " is the minimum value");
-        }
-        if ((myArray[2] < myArray[0]) && (myArray[2] < myArray[1])) {
-            System.out.println(myArray[2] + " is the minimum value");
-        }
+        System.out.println("Min = " + min);
 
     }
 
+    public static void main(String[] args) {
+        int[] array1 = {-3, 12, 6, 90, 12};
+        mins(array1);
+    }
 }
