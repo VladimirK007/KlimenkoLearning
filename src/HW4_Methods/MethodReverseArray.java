@@ -3,9 +3,9 @@ package HW4_Methods;
 public class MethodReverseArray {
 
     public static void main(String[] args) {
-        int Main_Array[] = {20, 19, 18, 4, 16, 15, 14, 4, 12, 11, 9};
-        int Second_Array[] = {12, 3, 5, 9};
-        int Third_Array[] = {45, 894, 23, 243, 34};
+        int[] Main_Array = {20, 19, 18, 4, 16, 15, 14, 4, 12, 11, 9};
+        int[] Second_Array = {12, 3, 5, 9};
+        int[] Third_Array = {45, 894, 23, 243, 34};
         Reverse.Demo(Main_Array);
         System.out.println(" ");
         Reverse.Demo(Second_Array);
