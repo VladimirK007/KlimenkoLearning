@@ -1,21 +1,16 @@
 package HW3_LoopsArrays;
 
 public class ArrayReverse {
-    public static void ins(int[] array) {
-
-        int[] marks2 = new int[array.length];
-        System.out.print("Reversed Array: ");
-        for (int i = array.length - 1; i > 0; ) {
-            for (int j = 0; j < array.length; j++) {
-                marks2[j] = array[i];
-                i--;
-                System.out.print(marks2[j] + " ");
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        int[] array1 = {22, 2, 32, 3, 3, 3};
-        ins(array1);
+        int array[] = new int[] { 10,20,30,50,70 };
+        System.out.println("Reverse array:");
+        for(int i = 0; i < array.length / 2; i++){
+            int temp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = temp;
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
