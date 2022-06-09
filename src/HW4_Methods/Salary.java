@@ -4,96 +4,97 @@ import java.util.Scanner;
 
 public class Salary {
     public static void main(String[] args) {
-        hR k1 = new hR();
+        AgentSalary agent = new AgentSalary();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter working hours: ");
-        k1.h = scanner.nextInt();
-        System.out.print("Enter rate: ");
-        k1.rate = scanner.nextDouble();
-        System.out.print("Enter experience: ");
-        k1.exp = scanner.nextInt();
-        System.out.print("Enter number of sales: ");
-        k1.sN = scanner.nextInt();
-        System.out.print("Enter amount of sales: ");
-        k1.sA = scanner.nextInt();
+        System.out.print("Enter the Agent`s working hours: ");
+        agent.workingHours = scanner.nextInt();
+        System.out.print("Enter the Agent`s rate: ");
+        agent.rate = scanner.nextDouble();
+        System.out.print("Enter the Agent`s years of experience: ");
+        agent.yearsOfExperience = scanner.nextInt();
+        System.out.print("Enter number of sales for the Agent: ");
+        agent.numberOfSales = scanner.nextInt();
+        System.out.print("Enter the sales amount for the Agent: ");
+        agent.amountOfSales = scanner.nextInt();
+        System.out.println("______________________");
 
-        k1.hRate();
-        k1.kRate();
-        k1.sNBonus();
-        k1.sABonus();
-        k1.Total();
+        agent.BaseSalary();
+        agent.BaseHoursRatio();
+        agent.NumberOfSalesBonus();
+        agent.AmountOfSalesBonus();
+        agent.TotalSalary();
 
     }
 }
 
-class hR {
-    int h;
+class AgentSalary {
+    int workingHours;
     double rate;
-    int exp;
-    double k;
-    int sN;
-    double bonus1;
-    int sA;
-    double bonus;
-    double total;
+    int yearsOfExperience;
+    double baseHourRatio;
+    int numberOfSales;
+    double NumberOfSalesBonus;
+    int amountOfSales;
+    double amountOfSalesBonus;
+    double totalSalary;
     double salary;
 
-    public void hRate() {
+    public void BaseSalary() {
 
-        if (h > 160) {
-            salary = (160 + (h - 160) * 1.5) * rate;
+        if (workingHours > 160) {
+            salary = (160 + (workingHours - 160) * 1.5) * rate;
 
-        } else salary = h * rate;
-        System.out.println("The agent`s salary: " + salary + " USD");
+        } else salary = workingHours * rate;
+        System.out.println("The agent`s base salary: " + salary + " USD");
     }
 
 
-    public void kRate() {
-        if (exp <= 2) {
-            k = 1;
+    public void BaseHoursRatio() {
+        if (yearsOfExperience <= 2) {
+            baseHourRatio = 1;
         }
-        if ((exp > 2) && (exp <= 4)) {
-            k = 1.2;
+        if ((yearsOfExperience > 2) && (yearsOfExperience <= 4)) {
+            baseHourRatio = 1.2;
         }
-        if ((exp > 4) && (exp <= 6)) {
-            k = 1.3;
+        if ((yearsOfExperience > 4) && (yearsOfExperience <= 6)) {
+            baseHourRatio = 1.3;
         }
-        if (exp > 6) {
-            k = 1.4;
+        if (yearsOfExperience > 6) {
+            baseHourRatio = 1.4;
         }
-        System.out.println("The agent`s ratio: " + k);
+        System.out.println("The agent`s ratio: " + baseHourRatio);
     }
 
-    public void sNBonus() {
-        if (sN > 20) {
-            bonus1 = 250;
-            System.out.println("Bonus depending on the Number of sales: " + bonus1);
+    public void NumberOfSalesBonus() {
+        if (numberOfSales > 20) {
+            NumberOfSalesBonus = 250;
+            System.out.println("Bonus depending on the Number of sales: " + NumberOfSalesBonus);
         }
-        if (sN < 10) {
-            bonus1 = -150;
-            System.out.println("Fine depending on the Number of sales: " + bonus1);
+        if (numberOfSales < 10) {
+            NumberOfSalesBonus = -150;
+            System.out.println("Fine depending on the Number of sales: " + NumberOfSalesBonus);
         }
-        if ((sN >= 10) && (sN <= 20)) {
-            bonus1 = 0;
-            System.out.println("Bonus depending on the Number of sales: " + bonus1);
-        }
-    }
-
-    public void sABonus() {
-        if (sA > 15000) {
-            bonus = 250;
-            System.out.println("Bonus depending on the Amount of sales: " + bonus);
-        }
-        if (sA <= 15000) {
-            bonus = 0;
-            System.out.println("Bonus depending on the Amount of sales " + bonus);
+        if ((numberOfSales >= 10) && (numberOfSales <= 20)) {
+            NumberOfSalesBonus = 0;
+            System.out.println("Bonus depending on the Number of sales: " + NumberOfSalesBonus);
         }
     }
 
-    public void Total() {
-        total = (salary * k) + bonus1 + bonus;
-        System.out.println();
-        System.out.println("---Your Salary: " + total + " USD---");
+    public void AmountOfSalesBonus() {
+        if (amountOfSales > 15000) {
+            amountOfSalesBonus = 250;
+            System.out.println("Bonus depending on the Amount of sales: " + amountOfSalesBonus);
+        }
+        if (amountOfSales <= 15000) {
+            amountOfSalesBonus = 0;
+            System.out.println("Bonus depending on the Amount of sales " + amountOfSalesBonus);
+        }
+    }
+
+    public void TotalSalary() {
+        totalSalary = (salary * baseHourRatio) + NumberOfSalesBonus + amountOfSalesBonus;
+        System.out.println("______________________");
+        System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
     }
 }

@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class PhoneBill {
     public static void main(String[] args) {
-        Phone k1 = new Phone();
+        Phone person1 = new Phone();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of GB: ");
-        k1.gb = scanner.nextInt();
+        System.out.print("Enter the number of used gigabytes of traffic: ");
+        person1.gb = scanner.nextInt();
         System.out.print("Enter number of calls (min): ");
-        k1.calls = scanner.nextDouble();
+        person1.callDuration = scanner.nextDouble();
         System.out.print("Enter number of sms: ");
-        k1.sms = scanner.nextDouble();
-        System.out.print("Enter number of calls in 1 zone: ");
-        k1.callZone1 = scanner.nextDouble();
-        System.out.print("Enter number of calls in 2 zone: ");
-        k1.callZone2 = scanner.nextDouble();
+        person1.smsNumber = scanner.nextDouble();
+        System.out.print("Enter number of calls (min) in 1 zone: ");
+        person1.callsInZone1 = scanner.nextDouble();
+        System.out.print("Enter number of calls (min) in 2 zone: ");
+        person1.callsInZone2 = scanner.nextDouble();
 
-        k1.P1();
-        k1.P2();
-        k1.P3();
-        k1.P4();
-        k1.P5();
-        k1.P6();
+        person1.internetPrice();
+        person1.callPrice();
+        person1.smsPrice();
+        person1.foreignCallPrice1();
+        person1.foreignCallPrice2();
+        person1.totalPhoneBill();
 
     }
 }
@@ -31,62 +31,62 @@ public class PhoneBill {
 class Phone {
     int gb;
     double inetPrice;
-    double calls;
+    double callDuration;
     double callPrice;
-    double sms;
+    double smsNumber;
     double smsPrice;
-    double callZone1;
-    double callZone2;
-    double fC1;
-    double fC2;
-    double total;
+    double callsInZone1;
+    double callsInZone2;
+    double foreign1CallPrice;
+    double foreign2CallPrice;
+    double totalPhonePrice;
 
-    void P1() {
+    void internetPrice() {
         if (gb >= 8) {
             inetPrice = (gb - 8) * 100;
         } else inetPrice = 0;
         System.out.println("Internet price = " + inetPrice + " UAH");
     }
 
-    void P2() {
-        if (calls <= 500) {
-            callPrice = calls * 0.5;
+    void callPrice() {
+        if (callDuration <= 500) {
+            callPrice = callDuration * 0.5;
         }
-        if (calls > 500) {
-            callPrice = 500 * 0.5 + ((calls - 500) * 0.75);
+        if (callDuration > 500) {
+            callPrice = 500 * 0.5 + ((callDuration - 500) * 0.75);
         }
         System.out.println("Call price: " + callPrice + " UAH");
     }
 
-    void P3() {
-        if (sms > 50) {
-            smsPrice = (sms - 50) * 1.5 + 50;
+    void smsPrice() {
+        if (smsNumber > 50) {
+            smsPrice = (smsNumber - 50) * 1.5 + 50;
         }
-        if (sms <= 50) {
-            smsPrice = sms * 1;
+        if (smsNumber <= 50) {
+            smsPrice = smsNumber * 1;
         }
 
         System.out.println("SMS price: " + smsPrice + " UAH");
 
     }
 
-    void P4() {
-        fC1 = 1.5 * callZone1;
-        System.out.println("Foreign calls in 1 zone: " + fC1 + " UAH");
+    void foreignCallPrice1() {
+        foreign1CallPrice = 1.5 * callsInZone1;
+        System.out.println("Foreign calls in 1 zone: " + foreign1CallPrice + " UAH");
 
     }
 
-    void P5() {
-        fC2 = 2 * callZone2;
-        System.out.println("Foreign calls in 1 zone: " + fC2 + " UAH");
+    void foreignCallPrice2() {
+        foreign2CallPrice = 2 * callsInZone2;
+        System.out.println("Foreign calls in 2 zone: " + foreign2CallPrice + " UAH");
     }
 
-    void P6() {
+    void totalPhoneBill() {
 
-        total = (inetPrice + callPrice + smsPrice + fC1 + fC2) * 1.07;
+        totalPhonePrice = (inetPrice + callPrice + smsPrice + foreign1CallPrice + foreign2CallPrice) * 1.07;
         System.out.println(" ");
 
-        System.out.println("---Total Phone Bill: " + total + " UAH---");
+        System.out.println("---Total Phone Bill: " + totalPhonePrice + " UAH---");
     }
 }
 
