@@ -34,7 +34,7 @@ class AgentSalary {
     int yearsOfExperience;
     double baseHourRatio;
     int numberOfSales;
-    double NumberOfSalesBonus;
+    double numberOfSalesBonus;
     int amountOfSales;
     double amountOfSalesBonus;
     double totalSalary;
@@ -68,16 +68,16 @@ class AgentSalary {
 
     public void NumberOfSalesBonus() {
         if (numberOfSales > 20) {
-            NumberOfSalesBonus = 250;
-            System.out.println("Bonus depending on the Number of sales: " + NumberOfSalesBonus);
+            numberOfSalesBonus = 250;
+            System.out.println("Bonus depending on the Number of sales: " + numberOfSalesBonus);
         }
         if (numberOfSales < 10) {
-            NumberOfSalesBonus = -150;
-            System.out.println("Fine depending on the Number of sales: " + NumberOfSalesBonus);
+            numberOfSalesBonus = -150;
+            System.out.println("Fine depending on the Number of sales: " + numberOfSalesBonus);
         }
         if ((numberOfSales >= 10) && (numberOfSales <= 20)) {
-            NumberOfSalesBonus = 0;
-            System.out.println("Bonus depending on the Number of sales: " + NumberOfSalesBonus);
+            numberOfSalesBonus = 0;
+            System.out.println("Bonus depending on the Number of sales: " + numberOfSalesBonus);
         }
     }
 
@@ -93,8 +93,16 @@ class AgentSalary {
     }
 
     public void TotalSalary() {
-        totalSalary = (salary * baseHourRatio) + NumberOfSalesBonus + amountOfSalesBonus;
+        if (workingHours <=160){
+         totalSalary = salary + (workingHours*baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
         System.out.println("______________________");
         System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
+        }
+        if (workingHours > 160) {
+            totalSalary = salary + ((workingHours -(workingHours-160))*baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
+            System.out.println("______________________");
+            System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
+
+        }
     }
 }
