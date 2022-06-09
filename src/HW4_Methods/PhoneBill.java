@@ -8,7 +8,7 @@ public class PhoneBill {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of used gigabytes of traffic: ");
-        callsCost.usedTrafficGB = scanner.nextInt();
+        callsCost.usedTrafficGB = scanner.nextDouble();
         System.out.print("Enter number of calls (min): ");
         callsCost.callDuration = scanner.nextDouble();
         System.out.print("Enter number of sms: ");
@@ -29,7 +29,7 @@ public class PhoneBill {
 }
 
 class Phone {
-    int usedTrafficGB;
+    double usedTrafficGB;
     double inetPrice;
     double callDuration;
     double callPrice;
@@ -44,8 +44,10 @@ class Phone {
     void internetPrice() {
         if (usedTrafficGB >= 8) {
             inetPrice = (usedTrafficGB - 8) * 100;
-        } else inetPrice = 0;
+         } else inetPrice = 0;
+        System.out.println("______________________");
         System.out.println("Internet price = " + inetPrice + " UAH");
+
     }
 
     void callPrice() {
@@ -84,9 +86,8 @@ class Phone {
     void totalPhoneBill() {
 
         totalPhonePrice = (inetPrice + callPrice + smsPrice + foreign1CallPrice + foreign2CallPrice) * 1.07;
-        System.out.println(" ");
-
-        System.out.println("---Total Phone Bill: " + totalPhonePrice + " UAH---");
+        System.out.println("______________________ ");
+        System.out.println("Total Phone Bill: " + totalPhonePrice + " UAH");
     }
 }
 
