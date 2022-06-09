@@ -8,7 +8,7 @@ public class PhoneBill {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of used gigabytes of traffic: ");
-        person1.gb = scanner.nextInt();
+        person1.usedTrafficGB = scanner.nextInt();
         System.out.print("Enter number of calls (min): ");
         person1.callDuration = scanner.nextDouble();
         System.out.print("Enter number of sms: ");
@@ -29,7 +29,7 @@ public class PhoneBill {
 }
 
 class Phone {
-    int gb;
+    int usedTrafficGB;
     double inetPrice;
     double callDuration;
     double callPrice;
@@ -42,8 +42,8 @@ class Phone {
     double totalPhonePrice;
 
     void internetPrice() {
-        if (gb >= 8) {
-            inetPrice = (gb - 8) * 100;
+        if (usedTrafficGB >= 8) {
+            inetPrice = (usedTrafficGB - 8) * 100;
         } else inetPrice = 0;
         System.out.println("Internet price = " + inetPrice + " UAH");
     }
