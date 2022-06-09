@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class PhoneBill {
     public static void main(String[] args) {
-        Phone costOfTelephoneCalls = new Phone();
+        Phone callsCost = new Phone();
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of used gigabytes of traffic: ");
-        costOfTelephoneCalls.usedTrafficGB = scanner.nextInt();
+        callsCost.usedTrafficGB = scanner.nextInt();
         System.out.print("Enter number of calls (min): ");
-        costOfTelephoneCalls.callDuration = scanner.nextDouble();
+        callsCost.callDuration = scanner.nextDouble();
         System.out.print("Enter number of sms: ");
-        costOfTelephoneCalls.smsNumber = scanner.nextDouble();
+        callsCost.smsNumber = scanner.nextDouble();
         System.out.print("Enter number of calls (min) in 1 zone: ");
-        costOfTelephoneCalls.callsInZone1 = scanner.nextDouble();
+        callsCost.callsInZone1 = scanner.nextDouble();
         System.out.print("Enter number of calls (min) in 2 zone: ");
-        costOfTelephoneCalls.callsInZone2 = scanner.nextDouble();
+        callsCost.callsInZone2 = scanner.nextDouble();
 
-        costOfTelephoneCalls.internetPrice();
-        costOfTelephoneCalls.callPrice();
-        costOfTelephoneCalls.smsPrice();
-        costOfTelephoneCalls.foreignCallPrice1();
-        costOfTelephoneCalls.foreignCallPrice2();
-        costOfTelephoneCalls.totalPhoneBill();
+        callsCost.internetPrice();
+        callsCost.callPrice();
+        callsCost.smsPrice();
+        callsCost.foreignCallPrice1();
+        callsCost.foreignCallPrice2();
+        callsCost.totalPhoneBill();
 
     }
 }
