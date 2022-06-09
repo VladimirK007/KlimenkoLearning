@@ -2,12 +2,12 @@ package HW5_OOP1;
 
 public class SalaryCalculation {
     public static void main(String[] args) {
-      SalesAgentSalary agent1 = new SalesAgentSalary();
-      agent1.setSalary(150, 2);
-      agent1.getSalary();
-      System.out.println("____________________ ");
-      agent1.setSalary2(180, 2, 3,17,25000);
-      agent1.getSalary2();
+        SalesAgentSalary agent1 = new SalesAgentSalary();
+        agent1.setSalary(150, 2);
+        agent1.getSalary();
+        System.out.println("____________________ ");
+        agent1.setSalary2(180, 2, 3, 17, 25000);
+        agent1.getSalary2();
 
     }
 }
@@ -44,7 +44,11 @@ class SalesAgentSalary {
 
     }
 
-    public void setSalary2(int workingHours, double rate, int yearsOfExperience, int numberOfSales, int amountOfSales) {
+    public void setSalary2(int workingHours,
+                           double rate,
+                           int yearsOfExperience,
+                           int numberOfSales,
+                           int amountOfSales) {
         this.workingHours = workingHours;
         this.rate = rate;
         this.yearsOfExperience = yearsOfExperience;
@@ -76,34 +80,41 @@ class SalesAgentSalary {
 
         if (numberOfSales > 20) {
             numberOfSalesBonus = 250;
-            System.out.println("Bonus depending on the Number of sales: " + numberOfSalesBonus);
+            System.out.println("Bonus depending on the Number of sales: " +
+                    numberOfSalesBonus);
         }
         if (numberOfSales < 10) {
             numberOfSalesBonus = -150;
-            System.out.println("Fine depending on the Number of sales: " + numberOfSalesBonus);
+            System.out.println("Fine depending on the Number of sales: " +
+                    numberOfSalesBonus);
         }
         if ((numberOfSales >= 10) && (numberOfSales <= 20)) {
             numberOfSalesBonus = 0;
-            System.out.println("Bonus depending on the Number of sales: " + numberOfSalesBonus);
+            System.out.println("Bonus depending on the Number of sales: " +
+                    numberOfSalesBonus);
         }
 
 
         if (amountOfSales > 15000) {
             amountOfSalesBonus = 250;
-            System.out.println("Bonus depending on the Amount of sales: " + amountOfSalesBonus);
+            System.out.println("Bonus depending on the Amount of sales: " +
+                    amountOfSalesBonus);
         }
         if (amountOfSales <= 15000) {
             amountOfSalesBonus = 0;
-            System.out.println("Bonus depending on the Amount of sales " + amountOfSalesBonus);
+            System.out.println("Bonus depending on the Amount of sales " +
+                    amountOfSalesBonus);
         }
 
         if (workingHours <= 160) {
-            totalSalary = salary + (workingHours * baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
+            totalSalary = salary + (workingHours * baseHourRatio) +
+                    numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
         }
         if (workingHours > 160) {
-            totalSalary = salary + ((workingHours - (workingHours - 160)) * baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
+            totalSalary = salary + ((workingHours - (workingHours - 160)) *
+                    baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
 
