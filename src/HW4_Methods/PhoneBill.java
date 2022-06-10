@@ -47,7 +47,7 @@ class Phone {
     void internetPrice() {
         if (usedTrafficGB >= 8) {
             inetPrice = baseRate + (usedTrafficGB - 8) * 100;
-         } else inetPrice = baseRate;
+         } else {inetPrice = baseRate;}
         System.out.println("______________________");
         System.out.println("Internet price = " + inetPrice + " UAH");
 
