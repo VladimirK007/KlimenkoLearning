@@ -94,12 +94,12 @@ class AgentSalary {
 
     public void TotalSalary() {
         if (workingHours <=160){
-         totalSalary = workingHours*baseHourRatio + numberOfSalesBonus + amountOfSalesBonus;
+         totalSalary = workingHours*baseHourRatio*rate + numberOfSalesBonus + amountOfSalesBonus;
         System.out.println("______________________");
         System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
         }
         if (workingHours > 160) {
-            totalSalary = 160*baseHourRatio + ((workingHours-160)*1.5) + numberOfSalesBonus + amountOfSalesBonus;
+            totalSalary = 160*baseHourRatio*rate + ((workingHours-160)*1.5) + numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
 
