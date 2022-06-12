@@ -3,11 +3,12 @@ package HW5_OOP1;
 public class SalaryCalculation {
     public static void main(String[] args) {
         SalesAgentSalary agent1 = new SalesAgentSalary();
+        SalesAgentSalary agent2 = new SalesAgentSalary();
         agent1.setSalary(150, 2);
         agent1.getSalary();
-     //   System.out.println("____________________ ");
-     //   agent1.setSalary(180, 2, 3, 17, 25000);
-     //   agent1.getSalary2();
+        System.out.println("======================================== ");
+        agent2.setSalary(180, 2, 3, 17, 25000);
+        agent2.getSalary2();
 
     }
 }
@@ -33,7 +34,7 @@ class SalesAgentSalary {
     public double getSalary() {
 
         System.out.println("The Agent is in Trial Period ");
-        System.out.println("____________________");
+
 
         if (workingHours > 160) {
             salary = 160 * rate + ((workingHours - 160) * 1.5*rate);
@@ -58,13 +59,17 @@ class SalesAgentSalary {
         this.amountOfSales = amountOfSales;
     }
 
+
     public double getSalary2() {
+        System.out.println("Calculation of the salary for the second agent");
+        System.out.println("___________________________________");
         if (workingHours > 160) {
-            salary = 160 * rate;
+            salary = 160 * rate + ((workingHours - 160) * 1.5*rate);
 
         } else {
             salary = workingHours * rate;
         }
+
         System.out.println("The agent`s base salary: " + salary + " USD");
 
         if (yearsOfExperience <= 2) {
@@ -111,14 +116,14 @@ class SalesAgentSalary {
         }
 
         if (workingHours <= 160) {
-            totalSalary = salary + (workingHours * baseHourRatio) +
+            totalSalary = workingHours*rate*baseHourRatio +
                     numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
         }
         if (workingHours > 160) {
-            totalSalary = salary + ((workingHours - (workingHours - 160)) *
-                    baseHourRatio) + numberOfSalesBonus + amountOfSalesBonus;
+            totalSalary = 160 + ((workingHours - 160) *
+                    rate*1.5) + numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
 
