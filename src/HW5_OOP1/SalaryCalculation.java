@@ -5,9 +5,9 @@ public class SalaryCalculation {
         SalesAgentSalary agent1 = new SalesAgentSalary();
         agent1.setSalary(150, 2);
         agent1.getSalary();
-        System.out.println("____________________ ");
-        agent1.setSalary2(180, 2, 3, 17, 25000);
-        agent1.getSalary2();
+     //   System.out.println("____________________ ");
+     //   agent1.setSalary(180, 2, 3, 17, 25000);
+     //   agent1.getSalary2();
 
     }
 }
@@ -36,19 +36,21 @@ class SalesAgentSalary {
         System.out.println("____________________");
 
         if (workingHours > 160) {
-            salary = (160 + (workingHours - 160) * 1.5) * rate;
+            salary = 160 * rate + ((workingHours - 160) * 1.5*rate);
 
-        } else salary = workingHours * rate;
-        System.out.println("The agent`s salary: " + salary + " USD");
+        } else {
+            salary = workingHours * rate;
+        }
+        System.out.println("The agent`s base salary: " + salary + " USD");
         return salary;
 
     }
 
-    public void setSalary2(int workingHours,
-                           double rate,
-                           int yearsOfExperience,
-                           int numberOfSales,
-                           int amountOfSales) {
+    public void setSalary(int workingHours,
+                          double rate,
+                          int yearsOfExperience,
+                          int numberOfSales,
+                          int amountOfSales) {
         this.workingHours = workingHours;
         this.rate = rate;
         this.yearsOfExperience = yearsOfExperience;
@@ -58,9 +60,11 @@ class SalesAgentSalary {
 
     public double getSalary2() {
         if (workingHours > 160) {
-            salary = (160 + (workingHours - 160) * 1.5) * rate;
+            salary = 160 * rate;
 
-        } else salary = workingHours * rate;
+        } else {
+            salary = workingHours * rate;
+        }
         System.out.println("The agent`s base salary: " + salary + " USD");
 
         if (yearsOfExperience <= 2) {
