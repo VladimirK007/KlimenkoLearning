@@ -2,13 +2,12 @@ package HW5_OOP1;
 
 public class SalaryCalculation {
     public static void main(String[] args) {
-        SalesAgentSalary agent1 = new SalesAgentSalary();
-        SalesAgentSalary agent2 = new SalesAgentSalary();
-        agent1.setSalary(150, 2);
-        agent1.getSalary();
+        SalesAgentSalary agent1 = new SalesAgentSalary(160, 2);
+        SalesAgentSalary agent2 = new SalesAgentSalary(167, 2,
+                3, 25, 16000);
+        agent1.getSalaryTrial();
         System.out.println("======================================== ");
-        agent2.setSalary(180, 2, 3, 17, 25000);
-        agent2.getSalary2();
+        agent2.getSalaryContractor();
 
     }
 }
@@ -26,18 +25,19 @@ class SalesAgentSalary {
     private double totalSalary;
     private double salary;
 
-    public void setSalary(int workingHours, double rate) {
+    public SalesAgentSalary(int workingHours, double rate) {
+
         this.workingHours = workingHours;
         this.rate = rate;
+
     }
 
-    public double getSalary() {
+    public double getSalaryTrial() {
 
         System.out.println("The Agent is in Trial Period ");
 
-
         if (workingHours > 160) {
-            salary = 160 * rate + ((workingHours - 160) * 1.5*rate);
+            salary = 160 * rate + ((workingHours - 160) * 1.5 * rate);
 
         } else {
             salary = workingHours * rate;
@@ -47,11 +47,11 @@ class SalesAgentSalary {
 
     }
 
-    public void setSalary(int workingHours,
-                          double rate,
-                          int yearsOfExperience,
-                          int numberOfSales,
-                          int amountOfSales) {
+    public SalesAgentSalary(int workingHours,
+                            double rate,
+                            int yearsOfExperience,
+                            int numberOfSales,
+                            int amountOfSales) {
         this.workingHours = workingHours;
         this.rate = rate;
         this.yearsOfExperience = yearsOfExperience;
@@ -60,11 +60,10 @@ class SalesAgentSalary {
     }
 
 
-    public double getSalary2() {
-        System.out.println("Calculation of the salary for the second agent");
-        System.out.println("___________________________________");
+    public double getSalaryContractor() {
+
         if (workingHours > 160) {
-            salary = 160 * rate + ((workingHours - 160) * 1.5*rate);
+            salary = 160 * rate + ((workingHours - 160) * 1.5 * rate);
 
         } else {
             salary = workingHours * rate;
@@ -116,14 +115,14 @@ class SalesAgentSalary {
         }
 
         if (workingHours <= 160) {
-            totalSalary = workingHours*rate*baseHourRatio +
+            totalSalary = salary * baseHourRatio +
                     numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
         }
         if (workingHours > 160) {
-            totalSalary = 160 + ((workingHours - 160) *
-                    rate*1.5) + numberOfSalesBonus + amountOfSalesBonus;
+            totalSalary = 160 * baseHourRatio * rate + ((workingHours - 160) *
+                    rate * 1.5) + numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
             System.out.println(" The Agent`s Salary: " + totalSalary + " USD ");
 
