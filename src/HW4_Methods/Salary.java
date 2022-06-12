@@ -17,7 +17,7 @@ public class Salary {
         agent.numberOfSales = scanner.nextInt();
         System.out.print("Enter the sales amount for the Agent: ");
         agent.amountOfSales = scanner.nextInt();
-        System.out.println("______________________");
+        System.out.println("_____________________");
 
         agent.BaseSalary();
         agent.BaseHoursRatio();
