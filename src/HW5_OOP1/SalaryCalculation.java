@@ -3,23 +3,20 @@ package HW5_OOP1;
 public class SalaryCalculation {
     public static void main(String[] args) {
         SalesAgentSalary agent1 = new SalesAgentSalary(160, 2);
-        SalesAgentSalary agent2 = new SalesAgentSalary(167, 2,
+           SalesAgentSalary agent2 = new SalesAgentSalary(167, 2,
                 3, 25, 16000);
         agent1.getSalary();
         System.out.println("======================================== ");
-        agent1.baseSalaryCalc();
-        agent1.baseHoursRatioCalc();
-        agent1.numberOfSalesBonus();
-        agent1.amountOfSalesBonus();
-        agent1.totalSalary();
+        agent1.baseSalaryCalc(int workinghours, double rate);
+
 
         agent2.getSalary();
         System.out.println("======================================== ");
-        agent2.baseSalaryCalc();
-        agent2.baseHoursRatioCalc();
-        agent2.numberOfSalesBonus();
-        agent2.amountOfSalesBonus();
-        agent2.totalSalary();
+          agent2.baseSalaryCalc();
+          agent2.baseHoursRatioCalc();
+          agent2.numberOfSalesBonus();
+          agent2.amountOfSalesBonus();
+          agent2.totalSalary();
     }
 }
 
@@ -56,7 +53,7 @@ class SalesAgentSalary {
     }
 
 
-    double baseSalaryCalc() {
+    double baseSalaryCalc(int workingHours, double rate) {
 
 
         if (workingHours > 160) {
@@ -70,7 +67,7 @@ class SalesAgentSalary {
 
     }
 
-    double baseHoursRatioCalc() {
+    double baseHoursRatioCalc(int yearsOfExperience) {
         if (yearsOfExperience <= 2) {
             baseHourRatio = 1;
         }
@@ -87,7 +84,7 @@ class SalesAgentSalary {
         return baseHourRatio;
     }
 
-    double numberOfSalesBonus() {
+    double numberOfSalesBonus(int numberOfSales) {
         if (numberOfSales > 20) {
             numberOfSalesBonus = 250;
             System.out.println("Bonus depending on the Number of sales: " + numberOfSalesBonus);
@@ -103,7 +100,7 @@ class SalesAgentSalary {
         return numberOfSalesBonus;
     }
 
-    double amountOfSalesBonus() {
+    double amountOfSalesBonus(int amountOfSales) {
         if (amountOfSales > 15000) {
             amountOfSalesBonus = 250;
             System.out.println("Bonus depending on the Amount of sales: " + amountOfSalesBonus);
@@ -115,7 +112,8 @@ class SalesAgentSalary {
         return amountOfSalesBonus;
     }
 
-    double totalSalary() {
+    double totalSalary(int workingHours, double rate, double baseHourRatio,
+                       double numberOfSalesBonus, double amountOfSalesBonus) {
         if (workingHours <= 160) {
             totalSalary = workingHours * rate * baseHourRatio + numberOfSalesBonus + amountOfSalesBonus;
             System.out.println("______________________");
