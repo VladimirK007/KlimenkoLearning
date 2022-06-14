@@ -13,16 +13,16 @@ public class SalaryCalculation {
 
 class SalesAgentSalary {
 
-    private int workingHours;
-    private double rate;
-    private int yearsOfExperience;
-    private double baseHourRatio;
-    private int numberOfSales;
-    private double numberOfSalesBonus;
-    private int amountOfSales;
-    private double amountOfSalesBonus;
-    private double totalSalary;
-    private double salary;
+    int workingHours;
+    double rate;
+    int yearsOfExperience;
+    double baseHourRatio;
+    int numberOfSales;
+    double numberOfSalesBonus;
+    int amountOfSales;
+    double amountOfSalesBonus;
+    double totalSalary;
+    double salary;
 
     public SalesAgentSalary(int workingHours, double rate) {
 
