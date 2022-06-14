@@ -5,18 +5,9 @@ public class SalaryCalculation {
         SalesAgentSalary agent1 = new SalesAgentSalary(160, 2);
            SalesAgentSalary agent2 = new SalesAgentSalary(167, 2,
                 3, 25, 16000);
-        agent1.getSalary();
-        System.out.println("======================================== ");
-        agent1.baseSalaryCalc(int workinghours, double rate);
+        System.out.println(agent1.getSalary());
+        System.out.println(agent2.getSalary());
 
-
-        agent2.getSalary();
-        System.out.println("======================================== ");
-          agent2.baseSalaryCalc();
-          agent2.baseHoursRatioCalc();
-          agent2.numberOfSalesBonus();
-          agent2.amountOfSalesBonus();
-          agent2.totalSalary();
     }
 }
 
