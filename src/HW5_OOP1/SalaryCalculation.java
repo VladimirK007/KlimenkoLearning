@@ -5,8 +5,8 @@ public class SalaryCalculation {
         SalesAgentSalary agent1 = new SalesAgentSalary(182, 2);
         SalesAgentSalary agent2 = new SalesAgentSalary(170, 2,
                 3, 25, 16000);
-        agent1.getSalesAgentSalary();
-        agent2.getSalesAgentSalary();
+        System.out.println("The first agent`s salary: " + agent1.getSalary());
+        System.out.println("The second agent`s salary: " + agent2.getSalary());
 
     }
 }
@@ -16,20 +16,16 @@ class SalesAgentSalary {
     private int workingHours;
     private double rate;
     private int yearsOfExperience;
-    private double baseHourRatio;
     private int numberOfSales;
-    private double numberOfSalesBonus;
     private int amountOfSales;
-    private double amountOfSalesBonus;
-    private double totalSalary;
-    private static double salary;
-    private int overtime;
+    private double salary;
+
 
     public SalesAgentSalary(int workingHours, double rate) {
 
         this.workingHours = workingHours;
         this.rate = rate;
-        setSalary(workingHours, rate);
+        salary = setSalary(workingHours, rate);
     }
 
     public SalesAgentSalary(int workingHours, double rate, int yearsOfExperience,
@@ -47,7 +43,7 @@ class SalesAgentSalary {
     public double baseSalary(int workingHours, double rate) {
 
         if (workingHours > 160) {
-            salary = 160 * rate + ((workingHours-160) * 1.5 * rate);
+            salary = 160 * rate + ((workingHours - 160) * 1.5 * rate);
 
         } else {
             salary = workingHours * rate;
@@ -56,27 +52,27 @@ class SalesAgentSalary {
         return salary;
 
     }
+    public double baseHourRatio(int yearsOfExperience) {
+        double baseHourRatio=0;
 
-    public double baseHoursRatio(int yearsOfExperience) {
         if (yearsOfExperience <= 2) {
             baseHourRatio = 1;
         }
         if ((yearsOfExperience > 2) && (yearsOfExperience <= 4)) {
             baseHourRatio = 1.2;
         }
-        if ((yearsOfExperience > 4) && (yearsOfExperience <= 6)) {
+       if ((yearsOfExperience > 4) && (yearsOfExperience <= 6)) {
             baseHourRatio = 1.3;
         }
-        if (yearsOfExperience > 6) {
+       if (yearsOfExperience > 6) {
             baseHourRatio = 1.4;
         }
-
         return baseHourRatio;
 
     }
 
     public double numberOfSalesBonus(int numberOfSales) {
-
+        double numberOfSalesBonus=0;
         if (numberOfSales > 20) {
             numberOfSalesBonus = 250;
 
@@ -93,6 +89,7 @@ class SalesAgentSalary {
     }
 
     public double amountOfSalesBonus(int amountOfSales) {
+        double amountOfSalesBonus =0;
         if (amountOfSales > 15000) {
             amountOfSalesBonus = 250;
 
@@ -113,29 +110,28 @@ class SalesAgentSalary {
         this.numberOfSales = numberOfSales;
         this.amountOfSales = amountOfSales;
         if (workingHours < 160) {
-            salary = workingHours * baseHoursRatio(yearsOfExperience) * rate +
+            salary = workingHours * baseHourRatio(yearsOfExperience) * rate +
                     numberOfSalesBonus(numberOfSales) + amountOfSalesBonus(amountOfSales);
         } else {
-            salary = (160 * baseHoursRatio(yearsOfExperience) * rate) + ((workingHours-160) * 1.5*rate) +
+            salary = (160 * baseHourRatio(yearsOfExperience) * rate) + ((workingHours - 160) * 1.5 * rate) +
                     numberOfSalesBonus(numberOfSales) + amountOfSalesBonus(amountOfSales);
         }
-        System.out.println("The 2nd agent`s salary: " + salary);
+
 
     }
 
-    public void setSalary(int workingHours, double rate) {
+    public double setSalary(int workingHours, double rate) {
         this.workingHours = workingHours;
         this.rate = rate;
         salary = baseSalary(workingHours, rate);
-        System.out.println("The 1st agent`s salary: " + salary);
-
-
+        return salary;
     }
 
-    public double getSalesAgentSalary() {
+     double getSalary() {
 
         return salary;
     }
+
 }
 
 
