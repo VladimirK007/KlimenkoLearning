@@ -86,6 +86,15 @@ class PhoneBillInput {
         return foreign2CallPrice;
     }
 
+    double totalBill(double baseRate, double usedTrafficGB,
+                     double callDuration, double smsNumber,
+                     double callsInZone1, double callsInZone2) {
+
+        return (internetPrice(usedTrafficGB, baseRate) +
+                callPrice(callDuration) + smsPrice(smsNumber) +
+                foreignCallPrice1(callsInZone1) + foreignCallPrice2(callsInZone2)) * 1.07;
+    }
+
     public void setBill(double baseRate, double usedTrafficGB,
                         double callDuration, double smsNumber,
                         double callsInZone1, double callsInZone2) {
@@ -95,9 +104,7 @@ class PhoneBillInput {
         this.smsNumber = smsNumber;
         this.callsInZone1 = callsInZone1;
         this.callsInZone2 = callsInZone2;
-        totalPhonePrice = (internetPrice(usedTrafficGB, baseRate) +
-                callPrice(callDuration) + smsPrice(smsNumber) +
-                foreignCallPrice1(callsInZone1) + foreignCallPrice2(callsInZone2)) * 1.07;
+        totalPhonePrice = totalBill(baseRate, usedTrafficGB, callDuration, smsNumber, callsInZone1, callsInZone2);
 
     }
 
