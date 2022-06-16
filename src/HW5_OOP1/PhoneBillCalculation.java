@@ -4,7 +4,7 @@ public class PhoneBillCalculation {
     public static void main(String[] Args) {
         PhoneBillInput client1 = new PhoneBillInput(200, 9.5,
                 550, 58, 28, 30);
-        System.out.println(client1.getBill());
+        System.out.println("Total Phone Bill: " + client1.getBill());
 
     }
 }
@@ -24,17 +24,11 @@ class PhoneBillInput {
     public PhoneBillInput(double baseRate, double usedTrafficGB,
                           double callDuration, double smsNumber,
                           double callsInZone1, double callsInZone2) {
-        this.baseRate = baseRate;
-        this.usedTrafficGB = usedTrafficGB;
-        this.callDuration = callDuration;
-        this.smsNumber = smsNumber;
-        this.callsInZone1 = callsInZone1;
-        this.callsInZone2 = callsInZone2;
+
         setBill(baseRate, usedTrafficGB,
                 callDuration, smsNumber,
                 callsInZone1, callsInZone2);
     }
-
 
     public double internetPrice(double usedTrafficGB, double baseRate) {
 
@@ -98,16 +92,10 @@ class PhoneBillInput {
     public void setBill(double baseRate, double usedTrafficGB,
                         double callDuration, double smsNumber,
                         double callsInZone1, double callsInZone2) {
-        this.baseRate = baseRate;
-        this.usedTrafficGB = usedTrafficGB;
-        this.callDuration = callDuration;
-        this.smsNumber = smsNumber;
-        this.callsInZone1 = callsInZone1;
-        this.callsInZone2 = callsInZone2;
+
         totalPhonePrice = totalBill(baseRate, usedTrafficGB, callDuration, smsNumber, callsInZone1, callsInZone2);
 
     }
-
 
     double getBill() {
         return totalPhonePrice;

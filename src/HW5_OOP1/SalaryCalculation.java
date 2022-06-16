@@ -23,19 +23,13 @@ class SalesAgentSalary {
 
     public SalesAgentSalary(int workingHours, double rate) {
 
-        this.workingHours = workingHours;
-        this.rate = rate;
         salary = setSalary(workingHours, rate);
     }
 
     public SalesAgentSalary(int workingHours, double rate, int yearsOfExperience,
                             int numberOfSales, int amountOfSales) {
 
-        this.workingHours = workingHours;
-        this.rate = rate;
-        this.yearsOfExperience = yearsOfExperience;
-        this.numberOfSales = numberOfSales;
-        this.amountOfSales = amountOfSales;
+
         setSalary(workingHours, rate, yearsOfExperience, numberOfSales, amountOfSales);
 
     }
@@ -52,8 +46,9 @@ class SalesAgentSalary {
         return salary;
 
     }
+
     public double baseHourRatio(int yearsOfExperience) {
-        double baseHourRatio=0;
+        double baseHourRatio = 0;
 
         if (yearsOfExperience <= 2) {
             baseHourRatio = 1;
@@ -61,10 +56,10 @@ class SalesAgentSalary {
         if ((yearsOfExperience > 2) && (yearsOfExperience <= 4)) {
             baseHourRatio = 1.2;
         }
-       if ((yearsOfExperience > 4) && (yearsOfExperience <= 6)) {
+        if ((yearsOfExperience > 4) && (yearsOfExperience <= 6)) {
             baseHourRatio = 1.3;
         }
-       if (yearsOfExperience > 6) {
+        if (yearsOfExperience > 6) {
             baseHourRatio = 1.4;
         }
         return baseHourRatio;
@@ -72,7 +67,7 @@ class SalesAgentSalary {
     }
 
     public double numberOfSalesBonus(int numberOfSales) {
-        double numberOfSalesBonus=0;
+        double numberOfSalesBonus = 0;
         if (numberOfSales > 20) {
             numberOfSalesBonus = 250;
 
@@ -89,7 +84,7 @@ class SalesAgentSalary {
     }
 
     public double amountOfSalesBonus(int amountOfSales) {
-        double amountOfSalesBonus =0;
+        double amountOfSalesBonus = 0;
         if (amountOfSales > 15000) {
             amountOfSalesBonus = 250;
 
@@ -104,11 +99,7 @@ class SalesAgentSalary {
 
     public void setSalary(int workingHours, double rate, int yearsOfExperience,
                           int numberOfSales, int amountOfSales) {
-        this.workingHours = workingHours;
-        this.rate = rate;
-        this.yearsOfExperience = yearsOfExperience;
-        this.numberOfSales = numberOfSales;
-        this.amountOfSales = amountOfSales;
+
         if (workingHours < 160) {
             salary = workingHours * baseHourRatio(yearsOfExperience) * rate +
                     numberOfSalesBonus(numberOfSales) + amountOfSalesBonus(amountOfSales);
@@ -121,13 +112,11 @@ class SalesAgentSalary {
     }
 
     public double setSalary(int workingHours, double rate) {
-        this.workingHours = workingHours;
-        this.rate = rate;
         salary = baseSalary(workingHours, rate);
         return salary;
     }
 
-     double getSalary() {
+    double getSalary() {
 
         return salary;
     }
