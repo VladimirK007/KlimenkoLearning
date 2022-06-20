@@ -4,7 +4,7 @@ public class Lemon extends Fruit {
 
     public Lemon() {
 
-        this.calories = setCalories(calories);
+        this.setCalories(setCalories(getCalories()));
     }
 
     public String peelLemon() {
@@ -14,7 +14,6 @@ public class Lemon extends Fruit {
     @Override
     public int setCalories(int calories) {
         calories = 29;
-        super.setCalories(calories);
         return calories;
     }
 

@@ -2,10 +2,9 @@ package HW6_OOP2;
 
 public class Fruit {
 
-    public int calories;
+    private int calories;
 
     public Fruit() {
-
 
         this.calories = setCalories(calories);
     }

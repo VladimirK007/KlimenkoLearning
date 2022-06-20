@@ -3,7 +3,7 @@ package HW6_OOP2;
 public class Orange extends Fruit {
     public Orange() {
 
-        this.calories = setCalories(calories);
+        this.setCalories(setCalories(getCalories()));
     }
 
     public String peelOrange() {
@@ -13,7 +13,6 @@ public class Orange extends Fruit {
     @Override
     public int setCalories(int calories) {
         calories = 47;
-        super.setCalories(calories);
         return calories;
     }
 

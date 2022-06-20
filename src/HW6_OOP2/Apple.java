@@ -4,7 +4,7 @@ public class Apple extends Fruit {
 
     public Apple() {
 
-        this.calories = setCalories(calories);
+        this.setCalories(setCalories(getCalories()));
     }
 
     public String removeSeeds() {
@@ -14,7 +14,6 @@ public class Apple extends Fruit {
     @Override
     public int setCalories(int calories) {
         calories = 52;
-        super.setCalories(calories);
         return calories;
     }
 
@@ -22,9 +21,9 @@ public class Apple extends Fruit {
         return "Apple juice is prepared";
     }
 
-    public String displayInfo(){
-       return removeSeeds() + ". " + makeJuice() + ". It contains " +
-               getCalories() + " calories";
+    public String displayInfo() {
+        return removeSeeds() + ". \n===" + makeJuice() + ". \nIt contains " +
+                getCalories() + " calories";
 
     }
 

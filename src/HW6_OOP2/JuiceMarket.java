@@ -8,10 +8,9 @@ public class JuiceMarket {
         System.out.println(" ");
 
         Banana banana = new Banana();
-        Banana banana2 = banana;
-        System.out.println(banana2.peelBanana());
-        System.out.println("===" + banana2.makeJuice());
-        System.out.println("It contains " + banana2.getCalories() + " calories");
+        System.out.println(banana.peelBanana());
+        System.out.println("===" + banana.makeJuice());
+        System.out.println("It contains " + banana.getCalories() + " calories");
         System.out.println(" ");
 
         Orange orange = new Orange();

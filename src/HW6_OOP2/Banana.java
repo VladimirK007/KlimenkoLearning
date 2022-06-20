@@ -4,7 +4,7 @@ public class Banana extends Fruit {
 
     public Banana() {
 
-        this.calories = setCalories(calories);
+        this.setCalories(setCalories(getCalories()));
     }
 
     public String peelBanana() {
@@ -14,7 +14,6 @@ public class Banana extends Fruit {
     @Override
     public int setCalories(int calories) {
         calories = 89;
-        super.setCalories(calories);
         return calories;
     }
 
