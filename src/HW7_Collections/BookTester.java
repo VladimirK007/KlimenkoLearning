@@ -24,94 +24,20 @@ public class BookTester {
                 new ArrayList<>(Arrays.asList(book1, book2, book3,
                         book4, book5, book6, book7, book8, book9, book10));
 
-        ArrayList<String> booksWithSoftCover = new ArrayList<>();
-        ArrayList<String> booksWithHardCover = new ArrayList<>();
-
-
-        for (int i = 0; i < bookCollection.size(); i++) {
-
-            if (book1.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book1.getTitle());
-            } else {
-                booksWithHardCover.add(book1.getTitle());
-            }
-
-
-            if (book2.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book2.getTitle());
-
-            } else {
-                booksWithHardCover.add(book2.getTitle());
-
-            }
-
-            if (book3.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book3.getTitle());
-
-            } else {
-                booksWithHardCover.add(book3.getTitle());
-
-            }
-
-            if (book4.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book4.getTitle());
-
-            } else {
-                booksWithHardCover.add(book4.getTitle());
-
-            }
-            if (book5.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book5.getTitle());
-
-            } else {
-                booksWithHardCover.add(book5.getTitle());
-
-            }
-            if (book6.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book6.getTitle());
-
-            } else {
-                booksWithHardCover.add(book6.getTitle());
-
-            }
-            if (book7.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book7.getTitle());
-
-            } else {
-                booksWithHardCover.add(book7.getTitle());
-
-            }
-            if (book8.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book8.getTitle());
-
-            } else {
-                booksWithHardCover.add(book8.getTitle());
-
-            }
-            if (book9.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book9.getTitle());
-
-            } else {
-                booksWithHardCover.add(book9.getTitle());
-
-            }
-            if (book10.getCoverType().equals("Soft")) {
-                booksWithSoftCover.add(book10.getTitle());
-
-            } else {
-                booksWithHardCover.add(book10.getTitle());
-
-            }
-            break;
-
-        }
+        ArrayList<Book> booksWithSoftCover = new ArrayList<>();
+        ArrayList<Book> booksWithHardCover = new ArrayList<>();
 
 
         System.out.println("В магазине есть след книги: ");
-        for (Object booksAll : bookCollection) {
+        for (Book booksAll : bookCollection) {
             System.out.println(booksAll);
-        }
 
+            if (booksAll.getCoverType().equals("Soft")) {
+                booksWithSoftCover.add(booksAll);
+            } else {
+                booksWithHardCover.add(booksAll);
+            }
+        }
         System.out.println("В магазине есть след книги с мягким переплетом: ");
         for (Object booksSoft : booksWithSoftCover) {
             System.out.println(booksSoft);
