@@ -1,4 +1,4 @@
-package HW6_OOP2;
+package HW6_OOP2.Cakes;
 
 public class Cake {
 

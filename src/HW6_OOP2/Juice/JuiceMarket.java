@@ -1,4 +1,4 @@
-package HW6_OOP2;
+package HW6_OOP2.Juice;
 
 public class JuiceMarket {
 
