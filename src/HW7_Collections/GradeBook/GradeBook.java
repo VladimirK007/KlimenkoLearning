@@ -11,6 +11,8 @@ public class GradeBook {
         HashMap<String, Integer> secondTest = TestResult.getMakeUpGrades();
         HashMap<String, Integer> gradeBookMap = new HashMap<>();
 
+        System.out.println("::Final grades::");
+
         for (String student : namesOfStudents) {
             if (firstTest.get(student) > secondTest.get(student)) {
 
@@ -18,7 +20,9 @@ public class GradeBook {
 
             } else gradeBookMap.put(student, secondTest.get(student));
 
+
+            System.out.println(student + ": " + gradeBookMap.get(student));
         }
-        System.out.println(gradeBookMap);
+
     }
 }
