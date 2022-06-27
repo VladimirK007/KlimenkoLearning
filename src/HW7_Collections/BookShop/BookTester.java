@@ -1,4 +1,4 @@
-package HW7_Collections;
+package HW7_Collections.BookShop;
 
 import java.util.ArrayList;
 import java.util.Arrays;
