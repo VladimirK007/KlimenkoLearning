@@ -20,9 +20,12 @@ public class GradeBook {
 
             } else gradeBookMap.put(student, secondTest.get(student));
 
-
-            System.out.println(student + ": " + gradeBookMap.get(student));
         }
+        for (Map.Entry<String, Integer> entry : gradeBookMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
 
     }
 }
+
