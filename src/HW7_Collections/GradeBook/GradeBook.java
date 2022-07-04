@@ -22,7 +22,7 @@ public class GradeBook {
 
         }
         for (Map.Entry<String, Integer> entry : gradeBookMap.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
+            System.out.println(entry);
         }
 
 
