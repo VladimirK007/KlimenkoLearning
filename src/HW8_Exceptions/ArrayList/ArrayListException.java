@@ -28,7 +28,7 @@ public class ArrayListException {
             System.out.print("Type the book index: ");
             input = scanner.nextInt();
             System.out.println("Title of the searched book is: " + bookCollection.get(input));
-        } catch (IndexOutOfBoundsException e) {
+        }catch (IndexOutOfBoundsException e) {
             System.out.println("The book with the index " + input + " does not exist in the collection!");
         } catch (InputMismatchException e) {
             System.out.println("Format issue, the required type is numeric!");
