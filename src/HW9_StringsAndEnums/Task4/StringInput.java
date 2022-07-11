@@ -1,6 +1,6 @@
 package HW9_StringsAndEnums.Task4;
 
-public class Task4 {
+public class StringInput {
 
     public static void main(String[] args) {
         BackAround word = new BackAround();

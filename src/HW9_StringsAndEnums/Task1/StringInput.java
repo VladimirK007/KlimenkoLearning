@@ -1,6 +1,6 @@
 package HW9_StringsAndEnums.Task1;
 
-public class Task1 {
+public class StringInput {
 
     public static void main(String[] args) {
         UpperCase sentence = new UpperCase();

@@ -1,6 +1,6 @@
 package HW9_StringsAndEnums.Task2;
 
-public class Task2 {
+public class StringInput {
 
 
     public static void main(String[] args) {

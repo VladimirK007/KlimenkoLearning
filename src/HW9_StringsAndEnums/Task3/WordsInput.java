@@ -1,7 +1,7 @@
 package HW9_StringsAndEnums.Task3;
 
 
-public class Task3 {
+public class WordsInput {
 
     public static void main(String[] args) {
         Repeat word = new Repeat();
