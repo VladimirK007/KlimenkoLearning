@@ -4,20 +4,23 @@ public class StringInput {
 
     public static void main(String[] args) {
         UpperCase sentence = new UpperCase();
-        sentence.afterFellInUpperCase("Get a modern feel with " +
+        System.out.println(sentence.afterFellInUpperCase("Get a modern feel with " +
                 "a smudge-resistant only for" +
-                "$2.50, you can finish now");
+                "$2.50, you can finish now"));
 
     }
 }
 
 class UpperCase {
 
-    public String str;
-
     public String afterFellInUpperCase(String inputString) {
-        str = inputString.substring(18, 23);
-        System.out.println(str.toUpperCase());
-        return str;
+        String[] list = inputString.split(" ");
+        for (int i = 0; i < list.length; i++) {
+            if (list[i].equals("feel")) {
+                return list[i + 1].toUpperCase();
+            }
+        }
+        return inputString;
     }
 }
+
